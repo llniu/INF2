@@ -203,7 +203,7 @@ The notebooks generate:
 
 If you use this repository, please cite:
 
-> *Niu et al., Development and validation of a novel non-invasive INF-2 biomarker for inflammation in steatotic liver disease (Under review)*
+> *Niu et al., Development and validation of a novel non-invasive INF-2 biomarker for inflammation in steatotic liver disease (Unpublished)*
 
 ---
 
