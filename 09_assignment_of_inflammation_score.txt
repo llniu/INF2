@@ -1,0 +1,9 @@
+inflam_binary = case_when(
+               inflammation < 2 ~ 0, #0-1 is no inflammation
+               inflammation >= 2 ~ 1,
+               is.na(inflammation) & gender == "female" & alt < 45 & ast < 35 & steatosis_binary == 0 & fibrosis_binary == 0 ~ 0,
+               is.na(inflammation) & gender == "female" & alt >= 45 | ast >= 35 | steatosis_binary == 1 | fibrosis_binary == 1 ~ NA_real_,
+               is.na(inflammation) & gender == "male" & alt < 70 & ast < 45 & steatosis_binary == 0 & fibrosis_binary == 0 ~ 0,
+               is.na(inflammation) & gender == "male" & alt >= 70 | ast >= 45 | steatosis_binary == 1 | fibrosis_binary == 1 ~ NA_real_),
+           #assign inflam_binary=0 to all ppts that do not have a biopsy that have no steatosis or fibrosis AND ALT and AST within normal range for their gender, and NA to all others that do not have a biopsy
+           # thresholds from Maja's email 28/6-22: For ALT er det 45 for kvinder og 70 for mænd, for AST er det 35 for kvinder og 45 for mænd
